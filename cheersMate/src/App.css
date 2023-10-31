@@ -3,40 +3,60 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
+:root {
+  --background: #0a0a0a;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  --darkpurple: #4c027a;
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+  --pinkGradient: linear-gradient(
+      203deg,
+      rgba(107, 52, 52, 0.4) 11.05%,
+      rgba(255, 5, 5, 0.4) 109.6%
+    ),
+    #b718b0;
 
-.card {
-  padding: 2em;
-}
+  --purpleGradient: linear-gradient(
+      203deg,
+      rgba(255, 20, 20, 0.4) 11.05%,
+      rgba(143, 0, 255, 0.4) 109.6%
+    ),
+    #4492d9;
 
-.read-the-docs {
-  color: #888;
+  --greenGradient: linear-gradient(
+      203deg,
+      rgba(20, 80, 234, 0.4) 11.05%,
+      rgba(255, 245, 0, 0.4) 109.6%
+    ),
+    #1e9e2d;
+
+  --purpleGradient: linear-gradient(
+      203deg,
+      rgba(224, 59, 59, 0.4) 11.05%,
+      rgba(0, 133, 255, 0.4) 109.6%
+    ),
+    #9818e7;
+
+  --yellowGradient: linear-gradient(
+      203deg,
+      rgba(71, 97, 17, 0.4) 11.05%,
+      rgba(255, 61, 0, 0.4) 109.6%
+    ),
+    #fcff39;
+
+  --redGradient: linear-gradient(
+      203deg,
+      rgba(51, 0, 255, 0.4) 11.05%,
+      rgba(188, 18, 18, 0.4) 109.6%
+    ),
+    #e8110e;
+
+  --whiteGradient: linear-gradient(
+      203deg,
+      rgba(255, 255, 255, 0.4) 11.05%,
+      rgba(201, 201, 201, 0.4) 109.6%
+    ),
+    #fff;
 }
