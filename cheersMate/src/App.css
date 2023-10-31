@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 16px;
   text-align: center;
   height: 100vh;
   font-family: "Lato";
@@ -60,4 +60,31 @@
       rgba(201, 201, 201, 0.4) 109.6%
     ),
     #fff;
+}
+
+body {
+  font-family: "Lato";
+  background-color: var(--background);
+  font-size: 16px;
+  color: white;
+}
+
+/*styling of the nav*/
+
+nav {
+  display: flex;
+  width: 100%;
+  padding-top: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loginSignUp {
+  font-size: 18px;
+  color: white;
+}
+.logo {
+  width: 59.396px;
+  height: 63.123px;
+  flex-shrink: 0;
 }
