@@ -2,8 +2,6 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 16px;
-  text-align: center;
-  height: 100vh;
   font-family: "Lato";
 }
 
@@ -67,6 +65,7 @@ body {
   background-color: var(--background);
   font-size: 16px;
   color: white;
+  height: 100vh;
 }
 
 /*styling of the nav*/
@@ -87,4 +86,24 @@ nav {
   width: 59.396px;
   height: 63.123px;
   flex-shrink: 0;
+}
+
+/*card holder for now*/
+.cardFav {
+  background: var(--pinkGradient);
+  width: 118px;
+  border-radius: 16px;
+}
+
+.cardFav img {
+  width: 32px;
+}
+
+.topCards {
+  display: flex;
+  padding: 60px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
