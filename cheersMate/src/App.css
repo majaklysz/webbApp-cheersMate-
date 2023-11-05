@@ -60,6 +60,9 @@ body {
   color: white;
   height: 100vh;
   margin: 0 auto;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;*/
 }
 
 /*styling of the nav*/
@@ -202,17 +205,117 @@ h1 {
   gap: 1em;
   justify-items: center;
 }
+.gridContainer {
+  padding: 16px;
+}
+
+.gridContainer h1 {
+  padding-left: 16px;
+}
+
+.titleAllGames {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleAllGames input {
+  background: none;
+  border: 1px solid white;
+  border-radius: 16px;
+  height: 40px;
+  padding: 16px;
+  color: white;
+  width: 150px;
+}
+
+.titleAllGames input:focus {
+  color: #0a0a0a;
+  background: rgb(255, 255, 255);
+}
+
+.filters-sorting {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.filters-sorting select {
+  padding: 8px;
+  background: #0a0a0a;
+  color: white;
+  font-size: 16px;
+  border: none;
+}
+
+.filters-sorting label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.allGames {
+  max-height: 650px;
+  width: auto;
+  overflow-x: hidden;
+}
+
+.allGames::-webkit-scrollbar {
+  background-color: #0a0a0a;
+  width: 5px;
+}
+
+.allGames::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+      203deg,
+      rgba(255, 20, 20, 0.332) 11.05%,
+      rgba(144, 0, 255, 0.181) 109.6%
+    ),
+    rgba(68, 145, 217, 0.261);
+  border-radius: 24px;
+}
+
 @media (min-width: 600px) {
   .allGames {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  nav {
+    padding-top: 24px;
+  }
 }
 
 @media (min-width: 992px) {
+  .pickContent {
+    gap: 16px;
+  }
+
+  nav {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 24px;
+  }
+
+  .titleAllGames {
+    justify-content: unset !important;
+    gap: 24px;
+  }
   .allGames {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-}
-.gridContainer {
-  padding: 16px;
+
+  .allGamesSection {
+    margin: auto;
+    width: 50%;
+    margin-top: 24px;
+    overflow-y: auto;
+  }
+
+  .pickChoose {
+    margin: auto;
+    width: 50%;
+  }
 }
