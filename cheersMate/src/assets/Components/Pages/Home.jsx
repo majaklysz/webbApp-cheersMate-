@@ -1,4 +1,5 @@
 import Games from "../Games";
+import NewGames from "../newGames";
 
 export default function Home() {
   return (
@@ -37,6 +38,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="newGamesSection">
+        <NewGames />
+      </div>
+      <div className="recoGamesSection"></div>
       <div className="allGamesSection">
         <Games />
       </div>

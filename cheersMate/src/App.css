@@ -185,6 +185,14 @@ h1 {
   padding-bottom: 16px;
   width: 150px;
 }
+
+.heartBox {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .players {
   display: flex;
   flex-direction: row;
@@ -209,7 +217,7 @@ h1 {
   padding: 16px;
 }
 
-.gridContainer h1 {
+.gridContainer2 {
   padding-left: 16px;
 }
 
@@ -279,6 +287,19 @@ h1 {
   border-radius: 24px;
 }
 
+.newGames {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+}
+
+.newGames::-webkit-scrollbar {
+  display: none;
+}
+
 @media (min-width: 600px) {
   .allGames {
     grid-template-columns: 1fr 1fr 1fr;
@@ -289,7 +310,8 @@ h1 {
 }
 
 @media (min-width: 992px) {
-  .pickContent {
+  .pickContent,
+  .newGames {
     gap: 16px;
   }
 
@@ -307,7 +329,8 @@ h1 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  .allGamesSection {
+  .allGamesSection,
+  .newGamesSection {
     margin: auto;
     width: 50%;
     margin-top: 24px;
@@ -318,4 +341,23 @@ h1 {
     margin: auto;
     width: 50%;
   }
+}
+
+.seeMore {
+  border: 1px solid #c1c1c1;
+  border-radius: 16px;
+  display: flex;
+  width: 137px;
+  height: 179px;
+  padding: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: #c1c1c1;
+}
+
+.seeMore img {
+  width: 40px;
 }
