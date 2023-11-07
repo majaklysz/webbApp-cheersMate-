@@ -38,29 +38,75 @@ export default function Game() {
     getPost();
   }, [url]);
 
+  const localStorageKey = `liked_${game.id}`;
+  const [isLiked, setIsLiked] = useState(
+    localStorage.getItem(localStorageKey) === "true"
+  );
+  const toggleLike = () => {
+    const newLikedState = !isLiked;
+    setIsLiked(newLikedState);
+    localStorage.setItem(localStorageKey, newLikedState.toString());
+  };
+
+  useEffect(() => {
+    // This effect runs when the component mounts.
+    // It retrieves the liked state from localStorage and sets the initial state.
+    setIsLiked(localStorage.getItem(localStorageKey) === "true");
+  }, [localStorageKey]);
+
+  const heartIconSrc = isLiked
+    ? "/src/assets/Icons/blackIcons/png/heartcoloredFull.png"
+    : "/src/assets/Icons/blackIcons/png/WhiteHeart.png";
+
   return (
-    <article key={game}>
-      <div className="gameBox">
+    <article className="gamePage" key={game}>
+      <div className="imageGameBox">
         <img src={image} alt="Game Image" />
       </div>
-      <div>
-        <h2>{name}</h2>
-        <div className="eqBox">
-          <img src="src\assets\Icons\bowling.svg" alt="time" />
-          <p>{equipment}</p>
+      <div className="underImage">
+        <div className="titleUnder">
+          <h1>{name}</h1>
+          <div className="shareHeart">
+            <img src="/src/assets/Icons/fi-rr-share.svg" alt="" />
+            <img
+              className="heartIconMain"
+              src={heartIconSrc}
+              onClick={toggleLike}
+            />
+          </div>
         </div>
-        <div className="players">
-          <img src="src\assets\Icons\people.svg" alt="time" />
-          <p>{people}</p>
+        <div className="iconsBox">
+          <div className="iconBox people">
+            <img src="/src/assets/Icons/people.svg" alt="time" />
+            <p>{people}</p>
+          </div>
+          <div className="iconBox">
+            <img src="/src/assets/Icons/hourglass.svg" alt="time" />
+            <p>{time}</p>
+          </div>
+          <div className="iconBox">
+            <img src="/src/assets/Icons/bowling.svg" alt="time" />
+            <p>{equipment}</p>
+          </div>
         </div>
-        <div className="timeBox">
-          <img src="src\assets\Icons\hourglass.svg" alt="time" />
-          <p>{time}</p>
-        </div>
-        <div>
-          <p>Description: {des}</p>
-          <p>Intro: {intro}</p>
-          <p>Winning: {winning}</p>
+        <div className="rulesBox">
+          <div className="ruresDropdown">
+            <h2>Basic Rules</h2>
+          </div>
+          <div className="rulesContentBox">
+            <div className="introBox">
+              <h2>Intro</h2>
+              <p>{intro}</p>
+            </div>
+            <div className="introBox">
+              <h2>Rules</h2>
+              <p>{des}</p>
+            </div>
+            <div className="introBox">
+              <h2>Winning</h2>
+              <p>{winning}</p>
+            </div>
+          </div>
         </div>
       </div>
     </article>
