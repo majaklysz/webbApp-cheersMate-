@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+=======
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: "Lato";
+} */
+
+>>>>>>> c2b71fb298eb13dc1aac50adc1c5c73c16336856
 :root {
   --background: #0a0a0a;
 
@@ -53,17 +63,25 @@
     #fff;
 }
 
-body {
-  font-family: "Lato";
+html, body {
+  font-family: "Lato", sans-serif;
   background-color: var(--background);
   font-size: 16px;
   color: white;
   height: 100vh;
+<<<<<<< HEAD
   margin: 0 auto;
   /* display: flex;
   flex-direction: column;
   align-items: center;*/
+=======
+  width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+>>>>>>> c2b71fb298eb13dc1aac50adc1c5c73c16336856
 }
+
 
 /*styling of the nav*/
 
@@ -394,3 +412,171 @@ h1 {
   align-items: center;
   cursor: pointer;
 }
+ #top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .heading {
+        font-weight: 900;
+        color: white;
+        margin: 0;
+        font-size: 26px;
+      }
+      .subheading {
+        background: linear-gradient(to top right, #4492d9, #8f00ff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 18px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-row: 1;
+        grid-column: 1;
+      }
+      .spinwheel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #wheel {
+        transition: all 4s cubic-bezier(0, 0.57, 0.61, 0.99);
+      }
+      #button {
+        width: 100%;
+        height: 50px;
+        border-radius: 20px;
+        position: relative;
+        z-index: 100;
+      }
+      .spinner {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        color: white;
+        display: flex;
+        border-width: 0px;
+        font-size: 18px;
+        gap: 7px;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-family: "Lato", sans-serif;
+        background-image: linear-gradient(to top right, #4492d9, #8f00ff);
+      }
+      .spinner:hover {
+        cursor: pointer;
+      }
+      .balloons {
+        width: 20px;
+        height: 20px;
+      }
+      .indicator {
+        position: absolute;
+        z-index: 1;
+      }
+      .spinImage {
+        width: 100%;
+        height: 250px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+      }
+      .popups {
+        height: 100%;
+        width: 100%;
+        grid-row: 1;
+        grid-column: 1;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+      .popup {
+        z-index: 100;
+        display: none;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      .popupcontent {
+        margin: auto;
+        background-color: #0a0a0a;
+        border-radius: 20px;
+        position: relative;
+        padding: 0;
+        height: 525px;
+        width: 400px;
+      }
+      .popupcontainer {
+        margin: 0;
+        color: white;
+        font-family: "Lato", sans-serif;
+      }
+      .modaltext {
+        padding: 20px;
+      }
+      .row1 {
+        display: inline-flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .gamename {
+        margin: 0;
+      }
+      .icons {
+        display: flex;
+        gap: 10px;
+      }
+      .row2 {
+        display: inline-flex;
+        flex-direction: row;
+        width: 90%;
+        gap: 50px;
+        align-items: center;
+      }
+      .row3 {
+        display: inline-flex;
+        flex-direction: row;
+        width: 90%;
+        gap: 5px;
+        align-items: center;
+        margin-top: 5px;
+      }
+      .row4 {
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+      }
+      .row5 {
+        display: flex;
+        justify-content: center;
+        text-decoration: underline;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .seemore {
+        background-image: linear-gradient(to top right, #4492d9, #8f00ff);
+        border-radius: 10px;
+        display: flex;
+        gap: 10px;
+        font-weight: 700;
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        color: white;
+        width: 60%;
+        height: 40px;
+      }
+      .wholewheel {
+        display: grid;
+      }
+      
