@@ -16,10 +16,12 @@ export default function Home() {
             <img src="src\assets\Icons\heart.svg" />
             <h3>Favorite</h3>
           </div>
-          <div className="cardRandom pickCards">
-            <img src="src\assets\Icons\randomIcon.svg" />
-            <h3>Random</h3>
-          </div>
+          <a href="/spin" >
+            <div className="cardRandom pickCards">
+              <img src="src\assets\Icons\randomIcon.svg" />
+              <h3>Random</h3>
+            </div>
+          </a>
           <div className="cardDice pickCards">
             <img src="src\assets\Icons\diceIcon.svg" />
             <h3>Dices</h3>
