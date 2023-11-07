@@ -20,8 +20,8 @@ export default function GameCard({ game }) {
   }, [localStorageKey]);
 
   const heartIconSrc = isLiked
-    ? "src\\assets\\Icons\\blackIcons\\png\\heartcoloredFull.png"
-    : "src\\assets\\Icons\\blackIcons\\png\\heartblackEmpty.png";
+    ? "/src/assets/Icons/blackIcons/png/heartcoloredFull.png"
+    : "/src/assets/Icons/blackIcons/png/heartblackEmpty.png";
 
   const navigate = useNavigate();
   function handleClick() {
