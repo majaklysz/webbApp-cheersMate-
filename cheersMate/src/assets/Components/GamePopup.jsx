@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Component } from "react";
 
+
 class WheelOfFortune extends Component {
   constructor(props) {
     super(props);
@@ -86,10 +87,6 @@ class WheelOfFortune extends Component {
       console.error("Element with ID 'wheel' or '.reducted' not found.");
       return;
     }
-    // Makes the deduct amount visible & initiates the animation
-    // animation.style.visibility = "visible";
-    // animation.innerHTML = "";
-    // animation.classList.add("animate__animated", "animate__fadeOutUp");
 
     // Random int injected into the rotation for random spins
     this.setState({ tick: tick + 1 });
@@ -140,19 +137,25 @@ class WheelOfFortune extends Component {
                 src="http://nifty.maciejrutkowski.dk/wp-content/uploads/2023/11/Group-5.png"
               />
             </div>
+            <p id="tagsheading">Choose tags to filter the options</p>
+            <div className="wheeltags">
+             
+            </div>
           </div>
-          <div id="button">
-            <button
-              className="spinner"
-              id="spinButton"
-              onClick={this.spinButtonHandler}
-            >
-              Spin!{" "}
-              <img
-                className="balloons"
-                src="http://nifty.maciejrutkowski.dk/wp-content/uploads/2023/11/fi-rr-balloons.png"
-              />
-            </button>
+          <div id="buttoncontainer">
+            <div id="button">
+              <button
+                className="spinner"
+                id="spinButton"
+                onClick={this.spinButtonHandler}
+              >
+                Spin!{" "}
+                <img
+                  className="balloons"
+                  src="http://nifty.maciejrutkowski.dk/wp-content/uploads/2023/11/fi-rr-balloons.png"
+                />
+              </button>
+            </div>
           </div>
           <div className="reducted"></div>
           <div className="popups">
