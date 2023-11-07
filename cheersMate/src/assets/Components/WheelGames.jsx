@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 
-export default function WheelGames() {
+export default function Games() {
+  const [games, setGames] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+  const [sortBy, setSortBy] = useState("createdAt");
   const [selectedTags, setSelectedTags] = useState([]);
   const allTags = [
     "indoor",
@@ -12,6 +15,8 @@ export default function WheelGames() {
     "non-drinkers",
     "recomended",
   ];
+
+
 
   // Define handleTagSelection function
   const handleTagSelection = (e) => {
@@ -35,9 +40,32 @@ export default function WheelGames() {
         id: key,
         ...data[key],
       }));
+      setGames(gamesArray);
     }
     getGames();
   }, []);
+
+  let gamesToDisplay = [...games];
+
+  if (searchValue) {
+    gamesToDisplay = gamesToDisplay.filter((game) =>
+      game.name.toLowerCase().includes(searchValue)
+    );
+  }
+
+  if (selectedTags.length > 0) {
+    gamesToDisplay = gamesToDisplay.filter((game) =>
+      selectedTags.every((tag) => game.tags.includes(tag))
+    );
+  }
+
+  gamesToDisplay.sort((game1, game2) => {
+    if (sortBy === "name") {
+      return game1.name.localeCompare(game2.name);
+    } else if (sortBy === "createdAt") {
+      return game2.id - game1.id;
+    }
+  });
 
   return (
     <section className="gridContainer">
