@@ -3,17 +3,16 @@ import "./App.css";
 import Nav from "./assets/Components/Nav";
 import Home from "./assets/Components/Pages/Home";
 import Profile from "./assets/Components/Pages/Profile";
-import { getAuth, onAuthStateChanged } from "@firebase/auth";
+import SignUpPage from "./assets/Components/Pages/SignUpPage";
+import SignInPage from "./assets/Components/Pages/SignInPage";
+import { auth } from "../firebase";
 import { useEffect, useState } from "react";
-import SignInPage from "./assets/Components/Pages/Signin";
-import SignUpPage from "./assets/Components/Pages/SignUp";
-
+import { onAuthStateChanged } from "@firebase/auth";
+import HomeLoged from "./assets/Components/Pages/HomeLoged";
+import NavLoged from "./assets/Components/NavLoged";
 export default function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth")); // default value comes from localStorage
-
   useEffect(() => {
-    const auth = getAuth();
-
     onAuthStateChanged(auth, (user) => {
       if (user) {
         //user is authenticated / signed in
@@ -26,12 +25,12 @@ export default function App() {
       }
     });
   }, []);
+
   // variable holding all private routes including the nav bar
   const privateRoutes = (
     <>
-      <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomeLoged />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
@@ -40,10 +39,17 @@ export default function App() {
   // variable holding all public routes without nav bar
   const publicRoutes = (
     <Routes>
-      <Route path="/sign-in" element={<SignInPage />} />
-      <Route path="/sign-up" element={<SignUpPage />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/signin" element={<SignInPage />} />
     </Routes>
   );
 
-  return <main>{isAuth ? privateRoutes : publicRoutes}</main>;
+  // if user is authenticated, show privateRoutes, else show publicRoutes
+  return (
+    <>
+      {isAuth ? <NavLoged /> : <Nav />}
+      <main>{isAuth ? privateRoutes : publicRoutes}</main>
+    </>
+  );
 }

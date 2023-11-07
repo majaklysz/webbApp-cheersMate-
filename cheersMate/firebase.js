@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import "firebase/auth";
+import { getAuth } from "@firebase/auth";
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBd0F3eCKniMbCVzgIA5ZY88Ux8jYfdeuc",
@@ -19,3 +19,6 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
+
+// eslint-disable-next-line no-unused-vars
+const db = getDatabase(app);
