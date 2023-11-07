@@ -74,6 +74,10 @@ nav {
   padding-top: 40px;
   justify-content: space-between;
   align-items: center;
+  background: #0a0a0a;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .loginSignUp {
