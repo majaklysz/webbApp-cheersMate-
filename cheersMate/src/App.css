@@ -84,6 +84,7 @@ nav {
   width: 59.396px;
   height: 63.123px;
   flex-shrink: 0;
+  padding-bottom: 16px;
 }
 
 .pickHeading {
@@ -154,6 +155,7 @@ h1 {
   gap: 8px;
   scroll-behavior: smooth;
   overflow-x: scroll;
+  justify-content: space-between;
 }
 
 .pickContent::-webkit-scrollbar {
@@ -295,6 +297,7 @@ h1 {
   gap: 8px;
   scroll-behavior: smooth;
   overflow-x: scroll;
+  justify-content: space-between;
 }
 
 .newGames::-webkit-scrollbar {
@@ -311,6 +314,10 @@ h1 {
 }
 
 @media (min-width: 992px) {
+  .gamePage {
+    margin: 0 auto;
+    width: 40%;
+  }
   .pickContent,
   .newGames {
     gap: 16px;
@@ -393,4 +400,84 @@ h1 {
   gap: 16px;
   align-items: center;
   cursor: pointer;
+}
+
+.gamePage {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageGameBox img {
+  width: 100%;
+}
+
+.iconBox {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.iconBox img {
+  width: 24px;
+  height: 24px;
+}
+
+.people img {
+  width: 32px;
+}
+.iconsBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 16px;
+  margin-bottom: 40px;
+}
+
+.iconsBox p {
+  margin: 0;
+}
+
+.underImage {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+}
+.ruresDropdown h2 {
+  background: var(--greenGradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+.ruresDropdown {
+  border-bottom: 1px solid #1e9e2d;
+}
+.rulesBox h2 {
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.rulesBox p {
+  margin: 0;
+  line-height: 24px;
+}
+
+.rulesContentBox {
+  margin-bottom: 56px;
+}
+
+.titleUnder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shareHeart {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }
