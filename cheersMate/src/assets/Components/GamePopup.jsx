@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Component } from "react";
+import WheelGames from "./WheelGames";
 
 
 class WheelOfFortune extends Component {
@@ -139,7 +140,7 @@ class WheelOfFortune extends Component {
             </div>
             <p id="tagsheading">Choose tags to filter the options</p>
             <div className="wheeltags">
-             
+             <WheelGames/>
             </div>
           </div>
           <div id="buttoncontainer">
