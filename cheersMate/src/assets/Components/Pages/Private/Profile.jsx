@@ -1,10 +1,11 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { auth } from "../../../../firebase";
+import { auth } from "../../../../../firebase";
 import { useNavigate } from "react-router";
 
 export default function Profile() {
   const [authUser, setAuthUser] = useState(null);
+
   const navigate = useNavigate();
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
@@ -30,15 +31,21 @@ export default function Profile() {
   };
 
   return (
-    <div>
-      {authUser ? (
-        <>
-          <p>{`Signed In as ${authUser.email}`}</p>
-          <button onClick={userSignOut}>Sign Out</button>
-        </>
-      ) : (
-        <p>Signed Out</p>
-      )}
-    </div>
+    <section className="profile">
+      <div className="user">
+        <div className="userImgage"></div>
+      </div>
+
+      <div>
+        {authUser ? (
+          <>
+            <p>{`Signed In as ${authUser.email}`}</p>
+            <button onClick={userSignOut}>Sign Out</button>
+          </>
+        ) : (
+          <p>Signed Out</p>
+        )}
+      </div>
+    </section>
   );
 }

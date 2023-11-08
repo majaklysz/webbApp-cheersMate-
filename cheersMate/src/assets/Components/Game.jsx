@@ -10,7 +10,7 @@ export default function Game() {
   const [time, setTime] = useState("");
   const [des, setDes] = useState("");
   const [intro, setIntro] = useState("");
-  const [winning, setWinning] = useState(""); // Corrected the typo here.
+  const [winning, setWinning] = useState("");
 
   const params = useParams();
   const url = `https://webapp-exam-f3829-default-rtdb.europe-west1.firebasedatabase.app/games/${params.gameId}.json`;

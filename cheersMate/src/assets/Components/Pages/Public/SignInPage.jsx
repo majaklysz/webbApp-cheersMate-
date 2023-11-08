@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../../../firebase";
+import { auth } from "../../../../../firebase";
 const SignInPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,10 +20,11 @@ const SignInPage = () => {
 
     navigate("/");
   };
+  const isDisabled = !name || !email || !password;
 
   return (
-    <div>
-      <form onSubmit={signIn}>
+    <div className="signInUpBox">
+      <form className="formBox" onSubmit={signIn}>
         <h1>Log In to your Account</h1>
         <input
           type="email"
@@ -37,7 +38,13 @@ const SignInPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button type="submit">Log In</button>
+        <button
+          type="submit"
+          disabled={isDisabled}
+          className={isDisabled ? "gray-button" : ""}
+        >
+          Log In
+        </button>
       </form>
       <p>
         Do not have an account? <Link to="/signup">Sign Up</Link>

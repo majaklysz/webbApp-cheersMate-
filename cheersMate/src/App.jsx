@@ -1,15 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Nav from "./assets/Components/Nav";
-import Home from "./assets/Components/Pages/Home";
-import Profile from "./assets/Components/Pages/Profile";
-import SignUpPage from "./assets/Components/Pages/SignUpPage";
-import SignInPage from "./assets/Components/Pages/SignInPage";
+import Home from "./assets/Components/Pages/Public/Home";
+import Profile from "./assets/Components/Pages/Private/Profile";
+import SignUpPage from "./assets/Components/Pages/Public/SignUpPage";
+import SignInPage from "./assets/Components/Pages/Public/SignInPage";
 import { auth } from "../firebase";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "@firebase/auth";
-import HomeLoged from "./assets/Components/Pages/HomeLoged";
+import HomeLoged from "./assets/Components/Pages/Private/HomeLoged";
 import NavLoged from "./assets/Components/NavLoged";
+import Game from "./assets/Components/Game";
 export default function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth")); // default value comes from localStorage
   useEffect(() => {
@@ -32,6 +33,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomeLoged />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/games/:gameId" element={<Game />} />
       </Routes>
     </>
   );
@@ -42,6 +44,7 @@ export default function App() {
       <Route path="/" element={<Home />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/signin" element={<SignInPage />} />
+      <Route path="/games/:gameId" element={<Game />} />
     </Routes>
   );
 

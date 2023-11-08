@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth } from "../../../../firebase";
+import { auth } from "../../../../../firebase";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
@@ -36,14 +36,15 @@ export default function SignUpPage() {
       console.log("Sorry, something went wrong");
     }
   }
+  const isDisabled = !name || !email || !password;
 
   return (
-    <div>
-      <form onSubmit={signUp}>
+    <div className="signInUpBox">
+      <form onSubmit={signUp} className="formBox">
         <h1>Create Account</h1>
         <input
           type="name"
-          placeholder="Name"
+          placeholder="User name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         ></input>
@@ -59,7 +60,13 @@ export default function SignUpPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button type="submit">Sign Up</button>
+        <button
+          type="submit"
+          disabled={isDisabled}
+          className={isDisabled ? "gray-button" : ""}
+        >
+          Sign Up
+        </button>
       </form>
       <p>
         Already have an account? <Link to="/signin">Sign In</Link>

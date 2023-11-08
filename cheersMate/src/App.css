@@ -212,6 +212,7 @@ h1 {
   height: 137px;
   width: 150px;
   align-self: stretch;
+  cursor: pointer;
 }
 
 .allGames {
@@ -318,6 +319,10 @@ h1 {
 }
 
 @media (min-width: 992px) {
+  .formBox input {
+    width: 330px;
+  }
+
   .gamePage {
     margin: 0 auto;
     width: 40%;
@@ -484,4 +489,67 @@ h1 {
   display: flex;
   flex-direction: row;
   gap: 16px;
+}
+
+.signInUpBox {
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.formBox input {
+  border-radius: 10px;
+  background: white;
+  padding: 8px 16px;
+  color: #0a0a0a;
+  margin-bottom: 24px;
+  width: 230px;
+}
+
+.formBox button {
+  border-radius: 10px;
+  background: var(--greenGradient);
+  padding: 8px 32px;
+  max-width: 230px;
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.formBox button:hover {
+  background: var(--yellowGradient);
+}
+
+.formBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signInUpBox p {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.signInUpBox a {
+  color: #1e9e2d;
+}
+
+.formBox h1 {
+  margin-bottom: 24px;
+}
+
+.gray-button {
+  border: 1px solid gray !important;
+  background: none !important;
+  color: grey !important;
+}
+.profileLoged {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }

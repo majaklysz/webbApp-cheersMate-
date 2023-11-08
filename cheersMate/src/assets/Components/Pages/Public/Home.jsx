@@ -1,5 +1,5 @@
-import Games from "../Games";
-import NewGames from "../newGames";
+import Games from "../../Games";
+import NewGames from "../../newGames";
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 export default function GameCard({ game }) {
   const localStorageKey = `liked_${game.id}`;
