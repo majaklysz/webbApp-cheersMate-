@@ -24,7 +24,7 @@ export default function SignUpPage() {
     navigate("/");
   };
   async function createUser(uid, email) {
-    const url = `https://webapp-exam-f3829-default-rtdb.europe-west1.firebasedatabase.app/users/${uid}`;
+    const url = `https://webapp-exam-f3829-default-rtdb.europe-west1.firebasedatabase.app/users/${uid}.json`;
     const response = await fetch(url, {
       method: "PUT",
       body: JSON.stringify({ name, email }),

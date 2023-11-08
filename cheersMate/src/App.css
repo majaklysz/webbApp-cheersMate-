@@ -394,3 +394,9 @@ h1 {
   align-items: center;
   cursor: pointer;
 }
+
+.profileLoged {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
