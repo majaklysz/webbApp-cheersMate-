@@ -6,7 +6,7 @@ export default function Nav() {
       <NavLink to="/">
         <img className="logo" src="/src/assets/Icons/Logo.svg" alt="" />
       </NavLink>
-      <NavLink to="/profile">
+      <NavLink to="/signup">
         <img
           className="userProfile"
           src="/src/assets/Icons/profileIconWhole.svg"
