@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function GameCard({ game }) {
   const localStorageKey = `liked_${game.id}`;
@@ -22,20 +21,9 @@ export default function GameCard({ game }) {
   const heartIconSrc = isLiked
     ? "/src/assets/Icons/blackIcons/png/heartcoloredFull.png"
     : "/src/assets/Icons/blackIcons/png/heartblackEmpty.png";
-
-  const navigate = useNavigate();
-  function handleClick() {
-    navigate(`/games/${game.id}`);
-  }
-
   return (
     <article className="mainCard" key={game.id}>
-      <img
-        className="gameImage"
-        src={game.imageURL}
-        alt={game.name}
-        onClick={handleClick}
-      />
+      <img className="gameImage" src={game.imageURL} alt={game.name} />
       <div className="cardSmallDescription">
         <div className="players">
           <img src="src\assets\Icons\blackIcons\playersIcon.png" alt="" />
@@ -46,6 +34,7 @@ export default function GameCard({ game }) {
             className="heartIconMain"
             src={heartIconSrc}
             onClick={toggleLike}
+            alt="Heart Icon"
           />
         </div>
       </div>

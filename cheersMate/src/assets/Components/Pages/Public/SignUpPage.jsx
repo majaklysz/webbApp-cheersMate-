@@ -23,11 +23,11 @@ export default function SignUpPage() {
       });
     navigate("/");
   };
-  async function createUser(uid, email) {
+  async function createUser(uid, email, image) {
     const url = `https://webapp-exam-f3829-default-rtdb.europe-west1.firebasedatabase.app/users/${uid}.json`;
     const response = await fetch(url, {
       method: "PUT",
-      body: JSON.stringify({ name, email }),
+      body: JSON.stringify({ name, email, uid, image }),
     });
     if (response.ok) {
       const data = await response.json();

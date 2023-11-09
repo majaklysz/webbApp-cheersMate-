@@ -11,6 +11,8 @@ import { onAuthStateChanged } from "@firebase/auth";
 import HomeLoged from "./assets/Components/Pages/Private/HomeLoged";
 import NavLoged from "./assets/Components/NavLoged";
 import Game from "./assets/Components/Game";
+import CreateGame from "./assets/Components/Pages/Private/CreateGame";
+import EditGame from "./assets/Components/Pages/Private/EditGame";
 export default function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth")); // default value comes from localStorage
   useEffect(() => {
@@ -34,6 +36,8 @@ export default function App() {
         <Route path="/" element={<HomeLoged />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/games/:gameId" element={<Game />} />
+        <Route path="/addgame" element={<CreateGame />} />
+        <Route path="/editgame/:gameId" element={<EditGame />} />
       </Routes>
     </>
   );
