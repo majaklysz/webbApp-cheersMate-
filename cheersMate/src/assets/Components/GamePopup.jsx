@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+//Maciek
 import { Component } from "react";
 import PopupRules1 from "./PopupRules1";
 import PopupRules2 from "./PopupRules2";
