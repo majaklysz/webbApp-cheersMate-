@@ -147,6 +147,7 @@ h1 {
   height: 100px;
   justify-content: center;
   text-align: center;
+  cursor: pointer;
 }
 .pickCards h3 {
   width: 70px;
@@ -571,6 +572,7 @@ nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 60px;
 }
 
 .user {
@@ -616,14 +618,14 @@ nav a {
 .delete,
 .byebye {
   border-radius: 10px;
-  border: 1px solid rgb(149, 10, 10);
+  border: 1px solid rgb(149, 10, 10) !important;
   padding: 8px 32px;
   width: 230px;
   cursor: pointer;
   font-size: 18px;
-  color: rgb(149, 10, 10);
+  color: rgb(149, 10, 10) !important;
   transition: 0.3s ease-in-out;
-  background: none;
+  background: none !important;
 }
 
 .edit:hover {
@@ -632,8 +634,8 @@ nav a {
 
 .delete:hover,
 .byebye:hover {
-  background: var(--redGradient);
-  color: #fff;
+  background: var(--redGradient) !important;
+  color: #fff !important;
 }
 
 .createForm {
