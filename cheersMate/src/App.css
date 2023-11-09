@@ -488,6 +488,12 @@ justify-content: center;
         border-top-right-radius: 20px;
         border-top-left-radius: 20px;
       }
+     .randomgamepop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+     }
       .popups {
         height: 100%;
         width: 100%;
@@ -503,8 +509,8 @@ justify-content: center;
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgb(0, 0, 0, 1);
+        background-color: rgba(0, 0, 0, 0.8);
       }
       .popupcontent {
         margin: auto;
@@ -512,13 +518,14 @@ justify-content: center;
         border-radius: 20px;
         position: relative;
         padding: 0;
-        height: 525px;
+        height: 450px;
         width: 400px;
       }
       .popupcontainer {
         margin: 0;
         color: white;
         font-family: "Lato", sans-serif;
+        height: 100%;
       }
       .modaltext {
         padding: 20px;
@@ -563,9 +570,11 @@ justify-content: center;
         text-decoration: underline;
         font-size: 16px;
         cursor: pointer;
+            margin-top: 30px;
+    margin-bottom: 30px;
       }
       .seemore {
-        background-image: linear-gradient(to top right, #4492d9, #8f00ff);
+        background: var(--purpleGradientRando);
         border-radius: 10px;
         display: flex;
         gap: 10px;
@@ -578,8 +587,56 @@ justify-content: center;
         color: white;
         width: 60%;
         height: 40px;
+        cursor: pointer;
       }
       .wholewheel {
         display: grid;
       }
+      .tagscontainer {
+        height: 300px;
+        column-gap: 20px;
+        display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+      }
+      @media only screen and (min-width: 1001px) {
+        .tagscontainer {
+          width: 400px;
+        }
+      }
+      .wheeltags {
+width: 156px;
+height: 36px;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+background: var(--purpleGradientRando);
+cursor: pointer;
+border-radius: 12px;
+      }
+      .wheeltagsinside {
+        background-color: var(--background);
+        width: 150px;
+        height: 32px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+          .wheeltagsinside input[type="checkbox"] {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.wheeltagsinside.selected {
+  background-color: var(--purpleGradientRando);
+}
+#aesthetics {
+  width: 13px;
+  height: 13px;
+}
+
       
