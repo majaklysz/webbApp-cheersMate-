@@ -20,7 +20,7 @@ const SignInPage = () => {
 
     navigate("/");
   };
-  const isDisabled = !name || !email || !password;
+  const isDisabled = !email || !password;
 
   return (
     <div className="signInUpBox">
