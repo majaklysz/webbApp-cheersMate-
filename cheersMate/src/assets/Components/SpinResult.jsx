@@ -1,3 +1,5 @@
+//Maciek
+
 import { useState, useEffect } from "react";
 
 export default function SpinResult({ game }) {
