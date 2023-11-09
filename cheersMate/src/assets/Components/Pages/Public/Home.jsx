@@ -1,3 +1,4 @@
+//Maja
 import { useNavigate } from "react-router";
 import Games from "../../Games";
 import NewGames from "../../newGames";

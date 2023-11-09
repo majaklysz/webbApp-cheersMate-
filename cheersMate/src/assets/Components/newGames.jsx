@@ -1,3 +1,5 @@
+//Maja
+
 import { useEffect, useState } from "react";
 import GameCard from "./GameCard";
 
