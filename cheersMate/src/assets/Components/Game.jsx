@@ -58,22 +58,6 @@ export default function Game() {
     ? "/src/assets/Icons/blackIcons/png/heartcoloredFull.png"
     : "/src/assets/Icons/blackIcons/png/WhiteHeart.png";
 
-  async function handleDelete() {
-    const wantToDelete = confirm("Are you sure you want to delete?");
-
-    if (wantToDelete) {
-      const response = await fetch(url, {
-        method: "DELETE",
-      });
-
-      if (response.ok) {
-        navigate("/");
-      } else {
-        console.log("Something went wrong");
-      }
-    }
-  }
-
   return (
     <article className="gamePage" key={game}>
       <div className="imageGameBox">
@@ -131,9 +115,6 @@ export default function Game() {
           onClick={() => navigate(`/editgame/${game.id}`)}
         >
           Edit
-        </button>
-        <button className="delete" onClick={handleDelete}>
-          Delete
         </button>
       </div>
     </article>

@@ -78,81 +78,101 @@ export default function EditGame() {
       setErrorMessage("The image file is too big!");
     }
   }
+  async function handleDelete() {
+    const wantToDelete = confirm("Are you sure you want to delete?");
+
+    if (wantToDelete) {
+      const response = await fetch(url, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        navigate("/");
+      } else {
+        console.log("Something went wrong");
+      }
+    }
+  }
   return (
-    <form className="createForm" onSubmit={handleSub}>
-      <h1>Edit {name}</h1>
-      <div className="cellForm">
-        <label>Name of the game</label>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-      <div className="cellForm">
-        <label>Players</label>
-        <input
-          type="text"
-          value={people}
-          onChange={(e) => setPeople(e.target.value)}
-        />
-      </div>
-      <div className="cellForm">
-        <label>Time of the game</label>
-        <input
-          type="text"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-        />
-      </div>
-      <div className="cellForm">
-        <label>Equipment needed</label>
-        <input
-          type="text"
-          value={equipment}
-          onChange={(e) => setEquipment(e.target.value)}
-        />
-      </div>
-      <div className="cellForm">
-        <label>Small intro for the game</label>
-        <input
-          type="text"
-          value={intro}
-          onChange={(e) => setIntro(e.target.value)}
-        />
-      </div>
-      <div className="cellForm">
-        <label>Rules of the game</label>
-        <input
-          type="text"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </div>
-      <div className="cellForm">
-        <label>Who is winning the game?</label>
-        <input
-          type="text"
-          value={winning}
-          onChange={(e) => setWinning(e.target.value)}
-        />
-      </div>
-      <div className="cellForm">
-        <label>Image</label>
-        <input type="file" onChange={handleImageChange} />
-        <div className="imageBox">
-          <img
-            className="image-preview"
-            src={imageURL}
-            alt="Choose"
-            onError={(event) => (event.target.src = "")}
+    <>
+      <form className="createForm" onSubmit={handleSub}>
+        <h1>Edit {name}</h1>
+        <div className="cellForm">
+          <label>Name of the game</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
-      </div>
-      <p className="text-error">{errorMessage}</p>
-      <button type="submit" className="createGame">
-        Save Changes
-      </button>
-    </form>
+        <div className="cellForm">
+          <label>Players</label>
+          <input
+            type="text"
+            value={people}
+            onChange={(e) => setPeople(e.target.value)}
+          />
+        </div>
+        <div className="cellForm">
+          <label>Time of the game</label>
+          <input
+            type="text"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+          />
+        </div>
+        <div className="cellForm">
+          <label>Equipment needed</label>
+          <input
+            type="text"
+            value={equipment}
+            onChange={(e) => setEquipment(e.target.value)}
+          />
+        </div>
+        <div className="cellForm">
+          <label>Small intro for the game</label>
+          <input
+            type="text"
+            value={intro}
+            onChange={(e) => setIntro(e.target.value)}
+          />
+        </div>
+        <div className="cellForm">
+          <label>Rules of the game</label>
+          <input
+            type="text"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+        <div className="cellForm">
+          <label>Who is winning the game?</label>
+          <input
+            type="text"
+            value={winning}
+            onChange={(e) => setWinning(e.target.value)}
+          />
+        </div>
+        <div className="cellForm">
+          <label>Image</label>
+          <input type="file" onChange={handleImageChange} />
+          <div className="imageBox">
+            <img
+              className="image-preview"
+              src={imageURL}
+              alt="Choose"
+              onError={(event) => (event.target.src = "")}
+            />
+          </div>
+        </div>
+        <p className="text-error">{errorMessage}</p>
+        <button type="submit" className="createGame">
+          Save Changes
+        </button>
+        <button className="delete" onClick={handleDelete}>
+          Delete
+        </button>
+      </form>
+    </>
   );
 }

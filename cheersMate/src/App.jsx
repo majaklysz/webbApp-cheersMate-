@@ -49,6 +49,7 @@ export default function App() {
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/games/:gameId" element={<Game />} />
+      <Route path="/editgame/:gameId" element={<SignInPage />} />
     </Routes>
   );
 

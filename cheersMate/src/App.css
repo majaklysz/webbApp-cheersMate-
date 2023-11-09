@@ -616,14 +616,14 @@ nav a {
 .delete,
 .byebye {
   border-radius: 10px;
-  border: 1px solid rgb(149, 10, 10);
+  border: 1px solid rgb(149, 10, 10) !important;
   padding: 8px 32px;
   width: 230px;
   cursor: pointer;
   font-size: 18px;
-  color: rgb(149, 10, 10);
+  color: rgb(149, 10, 10) !important;
   transition: 0.3s ease-in-out;
-  background: none;
+  background: none !important;
 }
 
 .edit:hover {
@@ -632,8 +632,8 @@ nav a {
 
 .delete:hover,
 .byebye:hover {
-  background: var(--redGradient);
-  color: #fff;
+  background: var(--redGradient) !important;
+  color: #fff !important;
 }
 
 .createForm {
