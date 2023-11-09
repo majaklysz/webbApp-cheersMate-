@@ -58,8 +58,8 @@ export default function Games() {
   }
 
   if (selectedTags.length > 0) {
-    gamesToDisplay = gamesToDisplay.filter((game) =>
-      selectedTags.every((tag) => game.tags.includes(tag))
+    gamesToDisplay = gamesToDisplay.filter(
+      (game) => game.tags && selectedTags.some((tag) => game.tags.includes(tag))
     );
   }
 
