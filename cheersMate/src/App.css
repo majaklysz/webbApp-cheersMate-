@@ -147,6 +147,7 @@ h1 {
   height: 100px;
   justify-content: center;
   text-align: center;
+  cursor: pointer;
 }
 .pickCards h3 {
   width: 70px;
@@ -571,6 +572,7 @@ nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 60px;
 }
 
 .user {

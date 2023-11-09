@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router";
 import Games from "../../Games";
 import NewGames from "../../newGames";
 
 export default function HomeLoged() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="pickChoose">
@@ -12,7 +14,10 @@ export default function HomeLoged() {
           </div>
         </div>
         <div className="pickContent">
-          <div className="cardFav pickCards">
+          <div
+            className="cardFav pickCards"
+            onClick={() => navigate("/profile")}
+          >
             <img src="src\assets\Icons\heart.svg" />
             <h3>Favorite</h3>
           </div>
