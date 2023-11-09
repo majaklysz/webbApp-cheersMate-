@@ -13,6 +13,7 @@ import NavLoged from "./assets/Components/NavLoged";
 import Game from "./assets/Components/Game";
 import CreateGame from "./assets/Components/Pages/Private/CreateGame";
 import EditGame from "./assets/Components/Pages/Private/EditGame";
+import WheelOfFortune from "./assets/Components/GamePopup";
 export default function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth")); // default value comes from localStorage
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/games/:gameId" element={<Game />} />
         <Route path="/addgame" element={<CreateGame />} />
         <Route path="/editgame/:gameId" element={<EditGame />} />
+        <Route path="/spin" element={<WheelOfFortune />} />
       </Routes>
     </>
   );
@@ -50,6 +52,7 @@ export default function App() {
       <Route path="/signin" element={<SignInPage />} />
       <Route path="/games/:gameId" element={<Game />} />
       <Route path="/editgame/:gameId" element={<SignInPage />} />
+      <Route path="/spin" element={<WheelOfFortune />} />
     </Routes>
   );
 
