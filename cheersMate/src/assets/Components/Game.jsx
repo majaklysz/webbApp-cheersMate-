@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 export default function Game() {
   const [game, setGame] = useState({});
@@ -14,9 +14,9 @@ export default function Game() {
 
   const params = useParams();
   const url = `https://webapp-exam-f3829-default-rtdb.europe-west1.firebasedatabase.app/games/${params.gameId}.json`;
-
+  const navigate = useNavigate();
   useEffect(() => {
-    async function getPost() {
+    async function getGame() {
       const response = await fetch(url);
       const data = await response.json();
       setGame(data);
@@ -35,7 +35,7 @@ export default function Game() {
         }
       }
     }
-    getPost();
+    getGame();
   }, [url]);
 
   const localStorageKey = `liked_${game.id}`;
@@ -57,6 +57,22 @@ export default function Game() {
   const heartIconSrc = isLiked
     ? "/src/assets/Icons/blackIcons/png/heartcoloredFull.png"
     : "/src/assets/Icons/blackIcons/png/WhiteHeart.png";
+
+  async function handleDelete() {
+    const wantToDelete = confirm("Are you sure you want to delete?");
+
+    if (wantToDelete) {
+      const response = await fetch(url, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        navigate("/");
+      } else {
+        console.log("Something went wrong");
+      }
+    }
+  }
 
   return (
     <article className="gamePage" key={game}>
@@ -108,6 +124,17 @@ export default function Game() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="editDelete">
+        <button
+          className="edit"
+          onClick={() => navigate(`/editgame/${game.id}`)}
+        >
+          Edit
+        </button>
+        <button className="delete" onClick={handleDelete}>
+          Delete
+        </button>
       </div>
     </article>
   );

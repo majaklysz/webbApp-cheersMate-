@@ -553,3 +553,135 @@ h1 {
   flex-direction: row;
   gap: 8px;
 }
+
+.userNameNav {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.profile {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.userImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userImage img {
+  width: -webkit-fill-available;
+  height: auto;
+}
+
+.editDelete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 60px;
+}
+
+.edit {
+  border-radius: 10px;
+  background: var(--greenGradient);
+  padding: 8px 32px;
+  width: 230px;
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.delete,
+.byebye {
+  border-radius: 10px;
+  border: 1px solid rgb(149, 10, 10);
+  padding: 8px 32px;
+  width: 230px;
+  cursor: pointer;
+  font-size: 18px;
+  color: rgb(149, 10, 10);
+  transition: 0.3s ease-in-out;
+  background: none;
+}
+
+.edit:hover {
+  background: var(--yellowGradient);
+}
+
+.delete:hover,
+.byebye:hover {
+  background: var(--redGradient);
+  color: #fff;
+}
+
+.createForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.createForm button,
+.createGameButton button {
+  border-radius: 10px;
+  background: var(--greenGradient);
+  padding: 8px 32px;
+  width: 230px;
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+  color: white;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 40px;
+}
+
+.createForm button:hover,
+.createGameButton button:hover {
+  background: var(--purpleGradient);
+}
+
+.createForm input {
+  border-radius: 10px;
+  background: white;
+  padding: 8px 16px;
+  color: #0a0a0a;
+  width: 230px;
+  height: fit-content;
+}
+
+.cellForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.addNewGame {
+  margin: auto;
+  width: 50%;
+}
+
+.addNewGame h1 {
+  text-align: center;
+}
