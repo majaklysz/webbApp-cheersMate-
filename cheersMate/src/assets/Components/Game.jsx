@@ -62,6 +62,47 @@ export default function Game() {
           <p>Intro: {intro}</p>
           <p>Winning: {winning}</p>
         </div>
+        <div className="iconsBox">
+          <div className="iconBox people">
+            <img src="/src/assets/Icons/people.svg" alt="time" />
+            <p>{people}</p>
+          </div>
+          <div className="iconBox">
+            <img src="/src/assets/Icons/hourglass.svg" alt="time" />
+            <p>{time}</p>
+          </div>
+          <div className="iconBox">
+            <img src="/src/assets/Icons/bowling.svg" alt="time" />
+            <p>{equipment}</p>
+          </div>
+        </div>
+        <div className="rulesBox">
+          <div className="ruresDropdown">
+            <h2>Basic Rules</h2>
+          </div>
+          <div className="rulesContentBox">
+            <div className="introBox">
+              <h2>Intro</h2>
+              <p>{intro}</p>
+            </div>
+            <div className="introBox">
+              <h2>Rules</h2>
+              <p>{des}</p>
+            </div>
+            <div className="introBox">
+              <h2>Winning</h2>
+              <p>{winning}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="editDelete">
+        <button
+          className="edit"
+          onClick={() => navigate(`/editgame/${game.id}`)}
+        >
+          Edit
+        </button>
       </div>
     </article>
   );

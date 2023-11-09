@@ -6,7 +6,7 @@ export default function GameCard({ game }) {
   const [isLiked, setIsLiked] = useState(
     localStorage.getItem(localStorageKey) === "true"
   );
-
+  const navigate = useNavigate();
   const toggleLike = () => {
     const newLikedState = !isLiked;
     setIsLiked(newLikedState);
@@ -46,6 +46,7 @@ export default function GameCard({ game }) {
             className="heartIconMain"
             src={heartIconSrc}
             onClick={toggleLike}
+            alt="Heart Icon"
           />
         </div>
       </div>
