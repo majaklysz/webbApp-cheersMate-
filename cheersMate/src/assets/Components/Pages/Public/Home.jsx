@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import Games from "../../Games";
 import NewGames from "../../newGames";
 
+
 export default function Home() {
   const navigate = useNavigate();
   return (

@@ -137,11 +137,13 @@ class WheelOfFortune extends Component {
             <div className="spinwheel">
               <img
                 className="indicator"
-                src="https://firebasestorage.googleapis.com/v0/b/webapp-exam-f3829.appspot.com/o/Polygon%204.png?alt=media&token=b38c1649-f2f6-459d-97dc-f2e8888e277d"
+                 src="https://firebasestorage.googleapis.com/v0/b/webapp-exam-f3829.appspot.com/o/Polygon%204.png?alt=media&token=b38c1649-f2f6-459d-97dc-f2e8888e277d"
+                
               />
               <img
                 id="wheel"
-                src="https://firebasestorage.googleapis.com/v0/b/webapp-exam-f3829.appspot.com/o/Group%205.png?alt=media&token=1e5955d3-ca93-4cb0-b438-7e59e1dd3978"
+                 src="https://firebasestorage.googleapis.com/v0/b/webapp-exam-f3829.appspot.com/o/Group%205.png?alt=media&token=1e5955d3-ca93-4cb0-b438-7e59e1dd3978"
+             
               />
             </div>
             <p id="tagsheading">Choose tags to filter the options</p>

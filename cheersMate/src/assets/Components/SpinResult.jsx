@@ -49,14 +49,17 @@ export default function SpinResult({ game }) {
             <h3 className="gamename">{game.people}</h3>
           </span>
           <span className="icons">
-            <img src="/src/assets/Icons/hourglass.svg" alt="time" />
+            <img
+              src="/src/assets/Icons/hourglass.svg"
+              alt="time"
+            />
             <h3 className="gamename">{game.time}</h3>
           </span>
         </div>
         <br />
         <div className="row3">
           <span className="icons">
-            <img src="/src/assets/Icons/fi-rr-bowling.svg" alt="time" />
+            <img src="/src/assets/Icons/bowling.svg" alt="time" />
             <h3 className="gamename">{game.equipment}</h3>
           </span>
         </div>
