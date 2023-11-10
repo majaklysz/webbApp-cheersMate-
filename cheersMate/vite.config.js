@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
   };
 
   if (command !== "serve") {
-    config.base = "/webbApp-cheersMate-/cheersMate";
+    config.base = "/webbApp-cheersMate-/";
   }
 
   return config;
